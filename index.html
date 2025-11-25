@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Au-migos | Doe Agora e Transforme a Vida de Cães Carentes</title>
+    <meta name="description" content="Página oficial de doação Au-migos. Ajude a fornecer ração, vacinas e cuidados veterinários para cães abandonados. Sua doação salva vidas!">
+    <meta name="keywords" content="doação, cachorros, cães, resgate animal, ong, au-migos, ajude, proteção animal">
+    <meta name="author" content="Seu Nome">
+
+    <meta property="og:title" content="Au-migos: Adote a Causa e Doe Ração e Cuidado!">
+    <meta property="og:description" content="Cada real doado garante alimento e tratamento essencial para um cão resgatado. Participe!">
+    <meta property="og:image" content="https://seusite.com/img/image-au-migo.jpg"> 
+    <meta property="og:url" content="https://seusite.com/doar">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    
+    <header>
+        <h1>Au-migos</h1>
+        <nav aria-label="Navegação Principal">
+            <ul>
+                <li><a href="#hero" aria-label="Voltar para o Início">Início</a></li>
+                <li><a href="#impacto" aria-label="Ir para a seção de Impacto das Doações">Impacto</a></li>
+                <li><a href="#doacao" aria-label="Ir diretamente para o Formulário de Doação">Doar</a></li>
+                <li><a href="#contato" aria-label="Ir para a seção de contato e redes sociais">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Sua Doação Transforma Latidos em Sorrisos</h1>
+                <p>Muitos cães esperam por uma segunda chance. Seu apoio garante alimentação, saúde e segurança para que eles encontrem um lar. Faça a diferença hoje!</p>
+                <a href="#doacao" class="cta-button" role="button" aria-label="Doar Agora e Ajudar Cães Carentes">DOAR AGORA</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/image-au-migo.jpg" alt="Cão resgatado, feliz e saudável, simbolizando a causa da ONG Au-migos.">
+            </div>
+            
+        </section>
+
+<section id="impacto">
+            <h2>Onde Seu Dinheiro Vai?</h2>
+            <div class="impacto-list">
+                <article class="beneficio-item">
+                    <h3>Ração e Nutrição</h3>
+                    <p>R$ 20,00 compra ração de qualidade para alimentar um cão por uma semana, garantindo sua energia e saúde básica.</p>
+                </article>
+                <article class="beneficio-item">
+                    <h3>Atendimento Veterinário</h3>
+                    <p>Financia consultas de rotina, exames e medicamentos vitais para cães resgatados com doenças ou ferimentos.</p>
+                </article>
+                <article class="beneficio-item">
+                    <h3>Saúde Preventiva</h3>
+                    <p>Ajuda a manter o calendário de vacinação em dia e subsidia o custo da castração, combatendo o abandono.</p>
+                </article>
+                <article class="beneficio-item">
+                    <h3>Abrigo e Conforto</h3>
+                    <p>Cobre despesas de manutenção do abrigo, proporcionando camas quentes e um ambiente seguro enquanto esperam por adoção.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <h2>Quem Já Apoiou a Causa</h2>
+            <div class="depoimento-list">
+                <blockquote class="depoimento-card" lang="pt">
+                    <p>"Ver a recuperação da Luna após a doação que fiz foi emocionante. A Au-migos realmente faz um trabalho incrível e transparente."</p>
+                    <cite>— Ana C. Silva</cite>
+                </blockquote>
+                <blockquote class="depoimento-card" lang="pt">
+                    <p>"Eu confio na Au-migos porque eles mostram exatamente para onde o dinheiro está indo. É investir na felicidade animal."</p>
+                    <cite>— Ricardo M.</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="doacao">
+            <h2>Faça Sua Doação Agora</h2>
+            <form id="donation-form" aria-label="Formulário de Doação Única">
+                
+                <div class="campo-valores" role="group" aria-labelledby="valor-label">
+                    <label id="valor-label">Escolha um valor ou digite o seu:</label>
+                    <button data-valor="25" aria-label="Doar 25 Reais">R$ 25</button>
+                    <button data-valor="50" aria-label="Doar 50 Reais">R$ 50</button>
+                    <button data-valor="100" aria-label="Doar 100 Reais">R$ 100</button>
+                   <input type="text" id="outro-valor" placeholder="Outro valor (R$)" aria-label="Campo para inserir outro valor de doação">
+                </div>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" required aria-required="true" placeholder="Seu Nome">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required aria-required="true" placeholder="seu.email@gmail.com">
+
+                <label for="pagamento">Método de Pagamento:</label>
+                <select id="pagamento" required aria-required="true">
+                    <option value="">Selecione...</option>
+                    <option value="Cartao">Cartão de Crédito</option>
+                    <option value="Debito">Cartão de Débito</option>
+                    <option value="PIX">PIX</option>
+                    <option value="Boleto">Boleto</option>
+                </select>
+
+                <div id="card-fields" style="display: none; border-top: 1px solid #ddd; padding-top: 15px; margin-top: 15px;">
+                    <label for="numero-cartao">Número do Cartão:</label>
+                    <input type="text" id="numero-cartao" placeholder="0000 0000 0000 0000" maxlength="19" data-required-card>
+
+                    <label for="nome-cartao">Nome Impresso no Cartão:</label>
+                    <input type="text" id="nome-cartao" placeholder="Seu Nome Completo" data-required-card>
+
+                    <div style="display: flex; gap: 15px;">
+                        <div style="flex: 2;">
+                            <label for="validade-cartao">Validade (MM/AA):</label>
+                            <input type="text" id="validade-cartao" placeholder="MM/AA" maxlength="5" data-required-card>
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" placeholder="CVV" maxlength="4" data-required-card>
+                        </div>
+                    </div>
+                </div>
+                <div id="pix-fields" style="display: none; border-top: 1px solid #ddd; padding-top: 15px; margin-top: 15px; text-align: center;">
+                    <p style="font-weight: bold; margin-bottom: 15px;">Use o QR Code abaixo ou o código Copia e Cola:</p>
+                    
+                    <div id="qrcode-area" style="margin: 0 auto 20px; max-width: 200px; padding: 10px; border: 1px solid #66BB6A;">
+                        <img src="img/qr-code-pix.jpg" alt="QR Code para pagamento PIX" style="width: 100%; display: block;">
+                    </div>
+                    
+                    <label for="pix-code" style="display: block; margin-bottom: 5px;">Código Pix (Copia e Cola):</label>
+                    <input type="text" id="pix-code" value="00020101021126580014br.gov.bcb.pix01366774911e-27fc-45c4-841d-0baea37dd76a5204000053039865802BR5920SOPHIA R O FERNANDES6006OSASCO62070503***6304C4CF" readonly 
+                           style="cursor: pointer; text-align: center; color: #003366; font-weight: 500;">
+                    
+                    <button type="button" id="copy-pix-btn" style="background-color: #66BB6A; color: #FFFFFF; border: none; padding: 8px 15px; border-radius: 5px; margin-top: 10px; cursor: pointer;">
+                        Copiar Código
+                    </button>
+                    <p id="copy-feedback" style="margin-top: 10px; font-size: 0.9em;"></p>
+                </div>
+                <p id="feedback-message" style="display: none; margin-top: 15px; font-weight: bold;"></p>
+
+                <label for="mensagem">Deixe uma mensagem ou Comentário (Opcional):</label>
+                <textarea id="mensagem" placeholder="Ex: 'Parabéns pela iniciativa! Um Au-migo a mais para cuidar.'" rows="3" aria-label="Campo opcional para deixar uma mensagem."></textarea>
+                <p id="feedback-message" style="display: none; margin-top: 15px; font-weight: bold;"></p>
+                
+                <button type="submit" class="submit-button" aria-label="Confirmar e Processar Doação">Confirmar Doação</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <h3>Au-migos - Resgate Animal</h3>
+            <p>Seu apoio é fundamental para o nosso trabalho. Juntos, damos esperança a quem não pode pedir.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Link para o Facebook da ONG">SOS Au Migos</a> |
+                <a href="#" aria-label="Link para o Instagram da ONG">@AuMigosOficial</a> |
+                <a href="#" aria-label="Link para o E-mail de Contato">aumigosdoação@gmail.com</a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Au-migos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

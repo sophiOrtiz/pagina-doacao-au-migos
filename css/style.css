@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+
+    --azul-profundo: #003366; 
+    --verde-menta: #66BB6A;   
+    --amarelo-dourado: #FFC107; 
+    --branco: #FFFFFF;
+    --cinza-claro: #F4F4F4; 
+    --texto-principal: #333333;
+
+
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-corpo: 'Poppins', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    color: var(--texto-principal);
+    background-color: var(--branco);
+    line-height: 1.6;
+}
+
+:focus {
+    outline: 2px solid var(--verde-menta);
+    outline-offset: 3px;
+    border-radius: 5px; 
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--azul-profundo);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--verde-menta);
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--azul-profundo);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    padding-bottom: 40px;
+    position: relative; 
+    margin-bottom: 60px; 
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--verde-menta);
+    margin: 15px auto 0; 
+    border-radius: 5px;
+}
+
+main section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--azul-profundo);
+    color: var(--branco);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;             
+    position: fixed;         
+    top: 0;                  
+    left: 0;
+    z-index: 1000;          
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    color: var(--branco);
+    font-size: 1.8em;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--branco);
+    font-weight: 500;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent; 
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:hover {
+    color: var(--amarelo-dourado);
+    border-bottom: 2px solid var(--amarelo-dourado);
+}
+
+nav a:focus {
+    outline-offset: 1px; 
+}
+#hero {
+    background-color: var(--cinza-claro);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 55%;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin: 20px 0 30px;
+}
+
+.hero-image {
+    max-width: 40%;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden; 
+    display: flex; 
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--amarelo-dourado);
+    color: var(--azul-profundo);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #ffda6a;
+    transform: translateY(-2px);
+}
+
+#impacto {
+    background-color: var(--branco);
+}
+
+.impacto-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+.beneficio-item {
+    flex-basis: 22%; 
+    padding: 25px;
+    border: 1px solid var(--cinza-claro);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 51, 102, 0.05);
+    transition: transform 0.3s;
+}
+
+.beneficio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 51, 102, 0.1);
+}
+
+.beneficio-item h3 {
+    color: var(--verde-menta);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#doacao {
+    background-color: var(--azul-profundo);
+    color: var(--branco);
+}
+
+#doacao h2 {
+    color: var(--branco);
+}
+
+#doacao h2::after {
+    background-color: var(--amarelo-dourado); 
+}
+
+#donation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: var(--texto-principal);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--fonte-corpo);
+}
+
+.campo-valores {
+    margin-bottom: 25px;
+}
+
+.campo-valores label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.campo-valores button {
+    background-color: var(--cinza-claro);
+    color: var(--azul-profundo);
+    border: 1px solid var(--azul-profundo);
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.campo-valores button:hover,
+.campo-valores button.selected { 
+    background-color: var(--verde-menta);
+    color: var(--branco);
+    border-color: var(--verde-menta);
+}
+
+#outro-valor {
+    margin-top: 10px;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: var(--amarelo-dourado);
+    color: var(--azul-profundo);
+    border: none;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #ffda6a;
+}
+
+#feedback-message {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+#feedback-message[style*="green"] {
+    background-color: rgba(102, 187, 106, 0.2); 
+    color: var(--verde-menta) !important;
+}
+
+#feedback-message[style*="red"] {
+    background-color: rgba(255, 0, 0, 0.1); 
+    color: red !important;
+}
+
+#feedback-message[style*="orange"] {
+    background-color: rgba(255, 193, 7, 0.2); 
+    color: #cc9a00 !important;
+}
+
+#depoimentos h2::after {
+    background-color: var(--amarelo-dourado);
+}
+
+.depoimento-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.depoimento-card {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--cinza-claro);
+    border-left: 5px solid var(--verde-menta);
+    border-radius: 5px;
+    font-style: italic;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.depoimento-card p {
+    margin-bottom: 15px;
+}
+
+.depoimento-card cite {
+    display: block;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--azul-profundo);
+    text-align: right;
+}
+
+footer {
+    background-color: var(--azul-profundo);
+    color: var(--cinza-claro);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: var(--amarelo-dourado);
+    font-size: 1em; 
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    color: var(--verde-menta);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 992px) {
+    
+    main section {
+        padding: 60px 15px;
+    }
+
+    
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .hero-content {
+        max-width: 85%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-image {
+        max-width: 80%;
+        height: 350px;
+        margin-top: 30px;
+    }
+
+    .impacto-list {
+        justify-content: center;
+        gap: 20px;
+    }
+    .beneficio-item {
+        flex-basis: 45%; 
+    }
+
+    .depoimento-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        padding: 15px 15px;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        gap: 15px;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    
+    h2 {
+        font-size: 2em;
+        padding-bottom: 20px;
+    }
+ 
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        height: 250px;
+    }
+
+    .beneficio-item {
+        flex-basis: 100%; 
+    }
+
+    #donation-form {
+        padding: 20px;
+    }
+
+    .campo-valores button {
+        padding: 8px 12px;
+        margin-bottom: 10px;
+    }
+
+    .hero-image {
+    max-width: 40%;
+    height: 450px;
+    background-color: #E0E0E0; 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+
+    
+    background-image: url('../img/cachorro-hero.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+}
+}
+#mensagem {
+    width: 100%;
+    padding: 12px 15px; /* Padding interno */
+    margin-bottom: 20px;
+    border: 2px solid var(--cor-borda); /* Borda inicial mais clara */
+    border-radius: 8px; /* Cantos arredondados */
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif; /* Garante que a fonte seja legível */
+    resize: vertical; /* Permite redimensionar apenas verticalmente (melhor para UX) */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-height: 100px; /* Altura mínima para ficar visível */
+}
+
+/* Foco: Estilo quando o usuário clica para digitar */
+#mensagem:focus {
+    border-color: var(--verde-menta); /* Borda verde ao focar */
+    box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.3); /* Sombra suave verde */
+    outline: none; /* Remove o outline padrão do navegador */
+}
+
+/* Placeholder (o texto dentro do campo) */
+#mensagem::placeholder {
+    color: #aaa;
+    font-style: italic;
+}

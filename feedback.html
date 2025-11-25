@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação Confirmada! - Au-migos</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    
+    <style>
+        .feedback-container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 40px;
+            background-color: var(--branco);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
+            text-align: center;
+            border: 3px solid var(--verde-menta); /* Borda de destaque */
+        }
+        .feedback-container h2 {
+            font-size: 3em;
+            color: var(--verde-menta);
+            margin-bottom: 10px;
+        }
+        .feedback-container h2::after {
+            display: none; 
+        }
+        .feedback-container p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        .feedback-icon {
+            font-size: 6em;
+            color: var(--amarelo-dourado);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .social-share a {
+            margin: 0 15px;
+            color: var(--azul-profundo);
+            font-weight: 600;
+        }
+        .social-share a:hover {
+            color: var(--verde-menta);
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Au-migos</h1>
+        <nav aria-label="Navegação Principal">
+            <ul>
+                <li><a href="index.html#hero">Início</a></li>
+                <li><a href="index.html#impacto">Impacto</a></li>
+                <li><a href="index.html#doacao">Doar</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="feedback-success">
+            <div class="feedback-container">
+                <span class="feedback-icon">🐾</span> <h2>Sua Doação Foi Confirmada!</h2>
+                
+                <p id="feedback-message-detail">
+                    **Nome do Doador**, o valor de **R$ [VALOR]** foi recebido com sucesso. 
+                    <br> Seu gesto de generosidade garantirá ração e cuidados veterinários essenciais para nossos cães resgatados. **Você é um Au-migo!**
+                </p>
+                
+                <hr style="border-color: #eee; margin: 30px 0;">
+
+                <h3>Acompanhe o Impacto</h3>
+                <p>Veja como sua ajuda transforma vidas! Siga-nos nas redes sociais e compartilhe a causa:</p>
+                
+                <div class="social-share">
+                    <a href="link-do-seu-facebook" target="_blank" aria-label="Compartilhe no Facebook">SOS Au Migos</a> |
+                    <a href="link-do-seu-instagram" target="_blank" aria-label="Siga no Instagram">@AuMigosOficial</a> |
+                    <a href="link-para-compartilhar-via-email" target="_blank" aria-label="Compartilhe no WhatsApp">aumigosdoação@gmail.com</a>
+                </div>
+
+                <a href="index.html" class="cta-button" style="margin-top: 40px;" role="button">Voltar à Página Principal</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <h3>Au-migos - Resgate Animal</h3>
+            <p>Seu apoio é fundamental. Juntos, damos esperança a quem não pode pedir.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Link para o Facebook da ONG">SOS Au Migos</a> |
+                <a href="#" aria-label="Link para o Instagram da ONG">@AuMigosOficial</a> |
+                <a href="#" aria-label="Link para o E-mail de Contato">aumigosdoação@gmail.com</a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Au-migos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Pega os parâmetros da URL
+            const params = new URLSearchParams(window.location.search);
+            const nome = params.get('nome');
+            const valor = params.get('valor');
+            
+            // Valores Padrão (Fallback, caso falhe)
+            const nomeDoador = nome || 'Caro Au-migo';
+            const valorDoado = valor || 'sua generosa quantia';
+            
+            // 2. Formata o valor para moeda brasileira (R$ 0,00)
+            let valorFormatado = valorDoado;
+            if (valorDoado !== 'sua generosa quantia') {
+                const valorFloat = parseFloat(valorDoado);
+                if (!isNaN(valorFloat)) {
+                    valorFormatado = valorFloat.toLocaleString('pt-BR', { 
+                        style: 'currency', 
+                        currency: 'BRL' 
+                    });
+                }
+            }
+
+            // 3. Localiza o elemento e insere o texto dinâmico (NOVA MENSAGEM)
+            const detailElement = document.getElementById('feedback-message-detail');
+            
+            detailElement.innerHTML = `
+                ${nomeDoador}, não temos palavras! Sua doação de **${valorFormatado}** foi registrada com sucesso.
+                <br> Este valor fará uma diferença enorme, cobrindo ração, vacinas e cuidados de emergência. **Obrigado por ser a esperança dos nossos Au-migos!**
+            `;
+        });
+    </script>
+
+</body>
+</html>

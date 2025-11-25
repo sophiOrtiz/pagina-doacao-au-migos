@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ==================================================================
-    // 1. CONSTANTES E VARIÁVEIS GLOBAIS
-    // ==================================================================
+
     const donationForm = document.getElementById('donation-form');
     const valorButtons = document.querySelectorAll('.campo-valores button');
     const outroValorInput = document.getElementById('outro-valor');
@@ -10,28 +7,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const pagamentoSelect = document.getElementById('pagamento');
     const cardFieldsDiv = document.getElementById('card-fields');
 
-    // Constantes para os campos de cartão
+
     const numeroCartaoInput = document.getElementById('numero-cartao');
     const validadeCartaoInput = document.getElementById('validade-cartao');
     const cvvInput = document.getElementById('cvv');
 
-    // Constantes para o PIX
+
     const pixFieldsDiv = document.getElementById('pix-fields');
     const pixCodeInput = document.getElementById('pix-code');
     const copyPixBtn = document.getElementById('copy-pix-btn');
     const copyFeedback = document.getElementById('copy-feedback');
 
 
-    let valorDoacaoSelecionado = 0; // Armazena o valor a ser enviado para o Back-end
-
-    // ==================================================================
-    // 2. FUNÇÕES AUXILIARES DE MASCARAMENTO
-    // ==================================================================
-    
-    // Máscaras de Cartão
+    let valorDoacaoSelecionado = 0; 
     function maskCardNumber(value) {
-        value = value.replace(/\D/g, ''); // Remove tudo que não for dígito
-        value = value.replace(/(\d{4})/g, '$1 ').trim(); // Adiciona espaço a cada 4 dígitos
+        value = value.replace(/\D/g, ''); 
+        value = value.replace(/(\d{4})/g, '$1 ').trim(); 
         return value.substring(0, 19);
     }
 
@@ -54,11 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return '';
         }
 
-        // 3. Transforma em número e divide por 100 para ter as casas decimais
-        // Ex: "500" vira 5.00
+
         let number = parseFloat(value) / 100;
         
-        // 4. Formata para o padrão monetário brasileiro (R$ 0,00)
+
         let formattedValue = number.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL',
@@ -66,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             maximumFractionDigits: 2
         });
 
-        // 5. Atualiza o valor FLOAT limpo para envio (5.00)
+ 
         valorDoacaoSelecionado = number;
 
         return formattedValue;
@@ -178,11 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const validadeCartao = validadeCartaoInput.value.trim();
             const cvv = cvvInput.value.trim().replace(/\D/g, ''); 
 
-            if (nomeCartao === '') {
-                 feedbackMessage.textContent = 'Por favor, preencha o nome impresso no cartão.';
-                 return;
-            }
-        }
+            if (numeroCartao.length < 15 || nomeCartao === '' || validadeCartao.length !== 5 || cvv.length < 3) {
+                feedbackMessage.textContent = 'Por favor, preencha todos os dados válidos do cartão (Número, Nome, Validade e CVV).';
+                return;
+    }
+}
 
         feedbackMessage.style.color = 'orange'; 
         feedbackMessage.textContent = 'Enviando doação para processamento...';

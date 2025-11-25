@@ -40,8 +40,8 @@ res.status(200).send({
     success: true, 
     message: `Doação de R$ ${dadosDoacao.valor} confirmada! Obrigado por ajudar nossos Au-migos.`,
     redirectUrl: 'feedback.html',
-    nomeDoador: dadosDoacao.nome,  // <-- NOME da variável
-    valorDoado: dadosDoacao.valor  // <-- NOME da variável
+    nomeDoador: dadosDoacao.nome,  
+    valorDoado: dadosDoacao.valor  
 });
 });
 

@@ -16,7 +16,7 @@
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
             text-align: center;
-            border: 3px solid var(--verde-menta); /* Borda de destaque */
+            border: 3px solid var(--verde-menta); 
         }
         .feedback-container h2 {
             font-size: 3em;
@@ -102,16 +102,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 1. Pega os parâmetros da URL
+            
             const params = new URLSearchParams(window.location.search);
             const nome = params.get('nome');
             const valor = params.get('valor');
             
-            // Valores Padrão (Fallback, caso falhe)
+   
             const nomeDoador = nome || 'Caro Au-migo';
             const valorDoado = valor || 'sua generosa quantia';
             
-            // 2. Formata o valor para moeda brasileira (R$ 0,00)
+
             let valorFormatado = valorDoado;
             if (valorDoado !== 'sua generosa quantia') {
                 const valorFloat = parseFloat(valorDoado);
@@ -123,7 +123,7 @@
                 }
             }
 
-            // 3. Localiza o elemento e insere o texto dinâmico (NOVA MENSAGEM)
+      
             const detailElement = document.getElementById('feedback-message-detail');
             
             detailElement.innerHTML = `

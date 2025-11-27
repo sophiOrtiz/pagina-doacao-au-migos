@@ -487,26 +487,26 @@ footer {
 }
 #mensagem {
     width: 100%;
-    padding: 12px 15px; /* Padding interno */
+    padding: 12px 15px; 
     margin-bottom: 20px;
-    border: 2px solid var(--cor-borda); /* Borda inicial mais clara */
-    border-radius: 8px; /* Cantos arredondados */
+    border: 2px solid var(--cor-borda); 
+    border-radius: 8px; 
     box-sizing: border-box;
     font-size: 1em;
-    font-family: 'Arial', sans-serif; /* Garante que a fonte seja legível */
-    resize: vertical; /* Permite redimensionar apenas verticalmente (melhor para UX) */
+    font-family: 'Arial', sans-serif; 
+    resize: vertical; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    min-height: 100px; /* Altura mínima para ficar visível */
+    min-height: 100px; 
 }
 
-/* Foco: Estilo quando o usuário clica para digitar */
+
 #mensagem:focus {
-    border-color: var(--verde-menta); /* Borda verde ao focar */
-    box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.3); /* Sombra suave verde */
-    outline: none; /* Remove o outline padrão do navegador */
+    border-color: var(--verde-menta); 
+    box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.3); 
+    outline: none; 
 }
 
-/* Placeholder (o texto dentro do campo) */
+
 #mensagem::placeholder {
     color: #aaa;
     font-style: italic;
